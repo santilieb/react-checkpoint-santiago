@@ -1,7 +1,7 @@
 import { uiActions } from "../../store/ui-slice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 
-function CartButton() {
+function HeaderCartButton() {
   const dispatch = useAppDispatch();
   const cartQuantity = useAppSelector((state: any) => state.cart.totalQuantity);
   const toggleCartHandler = () => {
@@ -11,9 +11,10 @@ function CartButton() {
   return (
     <button className="button" onClick={toggleCartHandler}>
       <span>My Cart</span>
+      <br />
       <span className="badge">{cartQuantity}</span>
     </button>
   );
 }
 
-export default CartButton;
+export default HeaderCartButton;

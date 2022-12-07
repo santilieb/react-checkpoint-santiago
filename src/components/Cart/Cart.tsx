@@ -1,12 +1,13 @@
 import CartItem from "./CartItem";
 import { ICartItem } from "../../templates/interfaces";
 import { useAppSelector } from "../../store/hooks";
+import Modal from "../UI/Modal";
 
 function Cart() {
   const cartItems = useAppSelector((state) => state.cart.items);
 
   return (
-    <div>
+    <Modal>
       <h1>Your Shopping Cart</h1>
       <ul>
         {cartItems.map((item: ICartItem) => (
@@ -22,7 +23,7 @@ function Cart() {
           />
         ))}
       </ul>
-    </div>
+    </Modal>
   );
 }
 

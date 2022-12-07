@@ -2,24 +2,6 @@ import ProductItem from "./ProductItem";
 import { ICartItem } from "../../templates/interfaces";
 import { useEffect } from "react";
 
-// const DUMMY_PRODUCTS: ICartItem[] = [
-//   {
-//     id: "p1",
-//     price: 6,
-//     title: "My First Book",
-//     description: "The first book I ever wrote",
-//     image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-
-//   },
-//   {
-//     id: "p2",
-//     price: 5,
-//     title: "My Second Book",
-//     description: "The second book I ever wrote",
-//     image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-//   },
-// ];
-
 let DUMMY_PRODUCTS: ICartItem[] = [];
 const Products = () => {
   function fetchProducts() {

@@ -1,4 +1,4 @@
-import CartButton from "../Cart/CartButton";
+import HeaderCartButton from "../Cart/HeaderCartButton";
 
 function Header() {
   return (
@@ -7,7 +7,7 @@ function Header() {
       <nav>
         <ul>
           <li>
-            <CartButton />
+            <HeaderCartButton />
           </li>
         </ul>
       </nav>
