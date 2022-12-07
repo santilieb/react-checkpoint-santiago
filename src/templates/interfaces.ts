@@ -1,12 +1,13 @@
-export interface CartItem {
+export interface ICartItem {
   id: number;
   name: string;
   price: number;
   quantity: number;
+  totalPrice: number;
 }
 
-export interface CartState {
-  items: CartItem[];
+export interface ICartState {
+  items: ICartItem[];
   totalPrice: number;
   totalQuantity: number;
 }
