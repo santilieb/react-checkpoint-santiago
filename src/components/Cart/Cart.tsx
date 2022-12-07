@@ -2,7 +2,7 @@ import CartItem from "./CartItem";
 import { ICartItem } from "../../templates/interfaces";
 import { useAppSelector } from "../../store/hooks";
 
-function Cart(props: any) {
+function Cart() {
   const cartItems = useAppSelector((state) => state.cart.items);
 
   return (
@@ -13,7 +13,9 @@ function Cart(props: any) {
           <CartItem
             key={item.id}
             id={item.id}
-            name={item.name}
+            title={item.title}
+            description={item.description}
+            image={item.image}
             price={item.price}
             quantity={item.quantity}
             totalPrice={item.totalPrice}

@@ -1,17 +1,20 @@
 import Card from "../UI/Card";
 import { cartActions } from "../../store/cart-slice";
 import { useAppDispatch } from "../../store/hooks";
+import { ICartItem } from "../../templates/interfaces";
 
-const ProductItem = (props: any) => {
+const ProductItem = (props: ICartItem) => {
   const dispatch = useAppDispatch();
-  const { id, title, price, description } = props;
+  const { id, title, image, price, description } = props;
 
   const addToCartHandler = (amount: number) => {
     dispatch(
       cartActions.addItemToCart({
         id,
-        name: title,
+        title,
         price,
+        description,
+        image,
         quantity: amount,
         totalPrice: price * amount,
       })
