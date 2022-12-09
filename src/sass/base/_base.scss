@@ -1,0 +1,44 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  // This defines what 1rem is
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+
+  @include respond(tab-land) {
+    font-size: 68%;
+  }
+
+  @include respond(tab-port) {
+    font-size: 70%;
+  }
+
+  @include respond(laptop) {
+    font-size: 75%;
+  }
+
+  @include respond(desktop) {
+    font-size: 77.5%;
+  }
+
+  @include respond(big-desktop) {
+    font-size: 80%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  background-color: $color-black;
+}
+button {
+  border: none;
+}
+
+.App {
+  text-align: center;
+}
