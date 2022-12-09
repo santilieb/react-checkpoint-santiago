@@ -1,14 +1,15 @@
 import ProductItem from "./ProductItem";
-import { ICartItem } from "../../templates/interfaces";
-import { useEffect } from "react";
+import { IProduct } from "../../templates/interfaces";
+import { useEffect, useState } from "react";
 
-let DUMMY_PRODUCTS: ICartItem[] = [];
 const Products = () => {
+  const [products, setProducts] = useState<IProduct[]>([]);
+
   function fetchProducts() {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((json) => {
-        DUMMY_PRODUCTS = json;
+        setProducts(json);
       });
   }
   useEffect(() => {
@@ -19,7 +20,7 @@ const Products = () => {
     <section className="">
       <h2>Buy your favorite products</h2>
       <ul>
-        {DUMMY_PRODUCTS.map((product: ICartItem) => (
+        {products.map((product: IProduct) => (
           <ProductItem
             key={product.id}
             id={product.id}
@@ -27,8 +28,6 @@ const Products = () => {
             title={product.title}
             image={product.image}
             description={product.description}
-            quantity={product.quantity}
-            totalPrice={product.totalPrice}
           />
         ))}
       </ul>

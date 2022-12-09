@@ -1,9 +1,9 @@
 import Card from "../UI/Card";
 import { cartActions } from "../../store/cart-slice";
 import { useAppDispatch } from "../../store/hooks";
-import { ICartItem } from "../../templates/interfaces";
+import { IProduct } from "../../templates/interfaces";
 
-const ProductItem = (props: ICartItem) => {
+const ProductItem = (props: IProduct) => {
   const dispatch = useAppDispatch();
   const { id, title, image, price, description } = props;
 
@@ -13,8 +13,6 @@ const ProductItem = (props: ICartItem) => {
         id,
         title,
         price,
-        description,
-        image,
         quantity: amount,
         totalPrice: price * amount,
       })
@@ -28,6 +26,11 @@ const ProductItem = (props: ICartItem) => {
           <h3>{title}</h3>
           <div className="">${price.toFixed(2)}</div>
         </header>
+        <img
+          src={image}
+          alt={title}
+          style={{ width: "100px", height: "auto" }}
+        />
         <p>{description}</p>
         <div className="">
           <button
@@ -39,7 +42,7 @@ const ProductItem = (props: ICartItem) => {
             }
           >
             Add to Cart
-          </button>{" "}
+          </button>
         </div>
       </Card>
     </li>

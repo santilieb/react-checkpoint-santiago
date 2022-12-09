@@ -16,8 +16,6 @@ function CartItem(props: ICartItem) {
         id,
         title,
         price,
-        image: "",
-        description: "",
         quantity: 1,
         totalPrice: price,
       })
