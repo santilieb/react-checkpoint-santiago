@@ -6,11 +6,11 @@ function CartItem(props: ICartItem) {
   const dispatch = useAppDispatch();
   const { id, title, price, quantity, image, totalPrice } = props;
 
-  const removeItemHandler = () => {
+  const removeItemFromCartHandler = () => {
     dispatch(cartActions.removeItemFromCart(id));
   };
 
-  const addItemHandler = () => {
+  const addItemToCartHandler = () => {
     dispatch(
       cartActions.addItemToCart({
         id,
@@ -21,6 +21,10 @@ function CartItem(props: ICartItem) {
         totalPrice: price,
       })
     );
+  };
+
+  const removeArticleCartHandler = () => {
+    dispatch(cartActions.removeArticleFromCart(id));
   };
 
   return (
@@ -37,8 +41,11 @@ function CartItem(props: ICartItem) {
           x <span>{quantity}</span>
         </div>
         <div className="">
-          <button onClick={removeItemHandler}>-</button>
-          <button onClick={addItemHandler}>+</button>
+          <button onClick={removeItemFromCartHandler}>- remove 1 </button>
+          <br />
+          <button onClick={addItemToCartHandler}>+ add 1</button>
+          <br />
+          <button onClick={removeArticleCartHandler}>Remove</button>
         </div>
       </div>
     </li>
