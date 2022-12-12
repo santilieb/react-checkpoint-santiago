@@ -6,7 +6,7 @@ import { IItem } from "../../templates/interfaces";
 
 const ProductItem = (props: IItem) => {
   const dispatch = useAppDispatch();
-  const { id, title, image, price } = props;
+  const { id, title, image, price, isInWishlist } = props;
 
   const addToCartHandler = (amount: number) => {
     dispatch(
@@ -30,6 +30,10 @@ const ProductItem = (props: IItem) => {
         image,
       })
     );
+  };
+
+  const removeFromWishlistHandler = () => {
+    dispatch(wishlistActions.removeItemFromWishlist(id));
   };
 
   return (
@@ -56,7 +60,13 @@ const ProductItem = (props: IItem) => {
             Add to Cart
           </button>
           <span> </span>
-          <button onClick={addToWishlistHandler}>Add to Wishlist</button>
+          {isInWishlist ? (
+            <button onClick={removeFromWishlistHandler}>
+              Remove from Wishlist
+            </button>
+          ) : (
+            <button onClick={addToWishlistHandler}>Add to Wishlist</button>
+          )}
         </div>
       </Card>
     </li>
