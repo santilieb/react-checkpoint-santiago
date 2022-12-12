@@ -1,11 +1,12 @@
 import Card from "../UI/Card";
 import { cartActions } from "../../store/cart-slice";
+import { wishlistActions } from "../../store/wishlist-slice";
 import { useAppDispatch } from "../../store/hooks";
-import { IProduct } from "../../templates/interfaces";
+import { IItem } from "../../templates/interfaces";
 
-const ProductItem = (props: IProduct) => {
+const ProductItem = (props: IItem) => {
   const dispatch = useAppDispatch();
-  const { id, title, image, price, description } = props;
+  const { id, title, image, price } = props;
 
   const addToCartHandler = (amount: number) => {
     dispatch(
@@ -13,8 +14,20 @@ const ProductItem = (props: IProduct) => {
         id,
         title,
         price,
+        image,
         quantity: amount,
         totalPrice: price * amount,
+      })
+    );
+  };
+
+  const addToWishlistHandler = () => {
+    dispatch(
+      wishlistActions.addItemToWishlist({
+        id,
+        title,
+        price,
+        image,
       })
     );
   };
@@ -31,7 +44,6 @@ const ProductItem = (props: IProduct) => {
           alt={title}
           style={{ width: "100px", height: "auto" }}
         />
-        <p>{description}</p>
         <div className="">
           <button
             onClick={
@@ -43,6 +55,8 @@ const ProductItem = (props: IProduct) => {
           >
             Add to Cart
           </button>
+          <span> </span>
+          <button onClick={addToWishlistHandler}>Add to Wishlist</button>
         </div>
       </Card>
     </li>

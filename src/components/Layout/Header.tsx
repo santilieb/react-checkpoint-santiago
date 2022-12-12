@@ -1,4 +1,5 @@
 import HeaderCartButton from "../Cart/HeaderCartButton";
+import HeaderWishlistButton from "../Wishlist/HeaderWishlistButton";
 
 function Header() {
   return (
@@ -8,6 +9,9 @@ function Header() {
         <ul>
           <li>
             <HeaderCartButton />
+            <br />
+            <br />
+            <HeaderWishlistButton />
           </li>
         </ul>
       </nav>

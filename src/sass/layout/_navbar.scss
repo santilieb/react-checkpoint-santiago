@@ -1,29 +1,29 @@
-.navbar {
-  &__list {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+// .navbar {
+//   &__list {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-around;
 
-    &-btn {
-      // remove the default button styling
+//     &-btn {
+//       // remove the default button styling
 
-      background-color: transparent;
-      cursor: pointer;
-      font-size: 1.5rem;
-      padding: 1rem 2rem;
-      width: 100%;
+//       background-color: transparent;
+//       cursor: pointer;
+//       font-size: 1.5rem;
+//       padding: 1rem 2rem;
+//       width: 100%;
 
-      &--random {
-        @include section($color-bright-purple);
-      }
+//       &--random {
+//         @include section($color-bright-purple);
+//       }
 
-      &--finder {
-        @include section($color-fluorescent-orange);
-      }
+//       &--finder {
+//         @include section($color-fluorescent-orange);
+//       }
 
-      &--trending {
-        @include section($color-fluorescent-green);
-      }
-    }
-  }
-}
+//       &--trending {
+//         @include section($color-fluorescent-green);
+//       }
+//     }
+//   }
+// }

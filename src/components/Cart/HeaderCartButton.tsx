@@ -5,7 +5,7 @@ function HeaderCartButton() {
   const dispatch = useAppDispatch();
   const cartQuantity = useAppSelector((state: any) => state.cart.totalQuantity);
   const toggleCartHandler = () => {
-    dispatch(uiActions.toggle());
+    dispatch(uiActions.toggleCart());
   };
 
   return (

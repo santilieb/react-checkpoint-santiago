@@ -1,47 +1,47 @@
-.btn {
-  border: solid 0.5rem;
-  width: 100%;
-  background-color: transparent;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem 2rem;
-  border-radius: 0.4rem;
-  margin-top: 2rem;
-  font-size: 2rem;
+// .btn {
+//   border: solid 0.5rem;
+//   width: 100%;
+//   background-color: transparent;
+//   cursor: pointer;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 1rem 2rem;
+//   border-radius: 0.4rem;
+//   margin-top: 2rem;
+//   font-size: 2rem;
 
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 1rem 2rem rgba($color-white, 0.2);
+//   &:hover {
+//     transform: translateY(-3px);
+//     box-shadow: 0 1rem 2rem rgba($color-white, 0.2);
 
-    &::after {
-      transform: scaleX(1.4) scaleY(1.6);
-      opacity: 0;
-    }
-  }
+//     &::after {
+//       transform: scaleX(1.4) scaleY(1.6);
+//       opacity: 0;
+//     }
+//   }
 
-  &:active,
-  &:focus {
-    outline: none;
-    transform: translateY(-1px);
-    box-shadow: 0 0.5rem 1rem rgba($color-white, 0.2);
-  }
+//   &:active,
+//   &:focus {
+//     outline: none;
+//     transform: translateY(-1px);
+//     box-shadow: 0 0.5rem 1rem rgba($color-white, 0.2);
+//   }
 
-  &--random {
-    color: $color-bright-purple;
-    & > svg {
-      margin-right: 1rem;
-      fill: $color-bright-purple;
-    }
-  }
+//   &--random {
+//     color: $color-bright-purple;
+//     & > svg {
+//       margin-right: 1rem;
+//       fill: $color-bright-purple;
+//     }
+//   }
 
-  &--finder {
-    margin-bottom: 2rem;
-    color: $color-fluorescent-orange;
-    & > svg {
-      margin-right: 1rem;
-      fill: $color-fluorescent-orange;
-    }
-  }
-}
+//   &--finder {
+//     margin-bottom: 2rem;
+//     color: $color-fluorescent-orange;
+//     & > svg {
+//       margin-right: 1rem;
+//       fill: $color-fluorescent-orange;
+//     }
+//   }
+// }

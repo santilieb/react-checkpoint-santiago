@@ -1,24 +1,22 @@
-import { ICartItem } from "../../templates/interfaces";
+import { IItem } from "../../templates/interfaces";
 import { useAppDispatch } from "../../store/hooks";
-import { cartActions } from "../../store/cart-slice";
+import { wishlistActions } from "../../store/wishlist-slice";
 
-function CartItem(props: ICartItem) {
+function CartItem(props: IItem) {
   const dispatch = useAppDispatch();
-  const { id, title, price, quantity, image, totalPrice } = props;
+  const { id, title, price, image } = props;
 
   const removeItemHandler = () => {
-    dispatch(cartActions.removeItemFromCart(id));
+    dispatch(wishlistActions.removeItemFromWishlist(id));
   };
 
   const addItemHandler = () => {
     dispatch(
-      cartActions.addItemToCart({
+      wishlistActions.addItemToWishlist({
         id,
         title,
         price,
         image,
-        quantity: 1,
-        totalPrice: price,
       })
     );
   };
@@ -27,15 +25,8 @@ function CartItem(props: ICartItem) {
     <li className="">
       <header>
         <h3>{title}</h3>
-        <div className="">
-          ${totalPrice.toFixed(2)}{" "}
-          <span className="">(${price.toFixed(2)}/item)</span>
-        </div>
       </header>
       <div className="">
-        <div className="">
-          x <span>{quantity}</span>
-        </div>
         <div className="">
           <button onClick={removeItemHandler}>-</button>
           <button onClick={addItemHandler}>+</button>

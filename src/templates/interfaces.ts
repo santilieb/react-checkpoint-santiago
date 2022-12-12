@@ -1,7 +1,13 @@
-export interface ICartItem {
+// interface for the items in the PLP and the Wishlist
+export interface IItem {
   id: number;
+  image: string;
   title: string;
   price: number;
+}
+
+//interface for the Cart items that extends IItem to add quantity and totalPrice
+export interface ICartItem extends IItem {
   quantity: number;
   totalPrice: number;
 }
@@ -12,10 +18,7 @@ export interface ICartState {
   totalQuantity: number;
 }
 
-export interface IProduct {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  image: string;
+export interface IWishlistState {
+  items: IItem[];
+  totalQuantity: number;
 }

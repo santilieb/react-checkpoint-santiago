@@ -1,9 +1,5 @@
 const Card = (props: any) => {
-  return (
-    <section className={`${props.className ? props.className : ""}`}>
-      {props.children}
-    </section>
-  );
+  return <section className="card">{props.children}</section>;
 };
 
 export default Card;

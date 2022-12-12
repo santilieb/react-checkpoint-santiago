@@ -12,28 +12,28 @@ body {
   text-align: left;
   text-transform: uppercase;
 
-  &--random {
-    color: $color-bright-purple;
-  }
+  //   &--random {
+  //     color: $color-bright-purple;
+  //   }
 
-  &--finder {
-    color: $color-fluorescent-orange;
-  }
+  //   &--finder {
+  //     color: $color-fluorescent-orange;
+  //   }
 
-  &--trending {
-    color: $color-fluorescent-green;
-  }
+  //   &--trending {
+  //     color: $color-fluorescent-green;
+  //   }
 }
 
-.heading-tertiary {
-  font-size: 1.4rem;
-  font-weight: 400;
-  letter-spacing: 0.07rem;
-  text-align: left;
-  margin-bottom: 1rem;
-  color: $color-white;
+// .heading-tertiary {
+//   font-size: 1.4rem;
+//   font-weight: 400;
+//   letter-spacing: 0.07rem;
+//   text-align: left;
+//   margin-bottom: 1rem;
+//   color: $color-white;
 
-  &--finder {
-    color: $color-fluorescent-orange;
-  }
-}
+//   &--finder {
+//     color: $color-fluorescent-orange;
+//   }
+// }

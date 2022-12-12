@@ -1,33 +1,28 @@
 import ProductItem from "./ProductItem";
-import { IProduct } from "../../templates/interfaces";
-import { useEffect, useState } from "react";
+import { IItem } from "../../templates/interfaces";
+// import { useState } from "react";
+import useFetch from "../../hooks/useFetch";
 
 const Products = () => {
-  const [products, setProducts] = useState<IProduct[]>([]);
+  // const [products, setProducts] = useState<IProduct[]>([]);
 
-  function fetchProducts() {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((json) => {
-        setProducts(json);
-      });
-  }
-  useEffect(() => {
-    fetchProducts();
-  }, []);
+  const { response, error, isLoading } = useFetch(
+    "https://fakestoreapi.com/products"
+  ); // destructuring the response, error and isLoading from useFetch hook result
 
   return (
-    <section className="">
-      <h2>Buy your favorite products</h2>
-      <ul>
-        {products.map((product: IProduct) => (
+    <section className="products">
+      <h2 className="heading-secondary">Buy your favorite products</h2>
+      <ul className="card-container">
+        {isLoading && <p>Loading...</p>}
+        {!isLoading && error && <p>{error}</p>}
+        {response.map((product: IItem) => (
           <ProductItem
             key={product.id}
             id={product.id}
             price={product.price}
             title={product.title}
             image={product.image}
-            description={product.description}
           />
         ))}
       </ul>

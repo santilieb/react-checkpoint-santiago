@@ -1,35 +1,35 @@
-.message {
-  padding: 1rem;
-  margin-top: 5rem;
-  border-radius: 0.5rem;
-  text-align: center;
-  margin-bottom: 1rem;
-  border: dashed;
-  font-size: 1.6rem;
-  font-weight: 600;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+// .message {
+//   padding: 1rem;
+//   margin-top: 5rem;
+//   border-radius: 0.5rem;
+//   text-align: center;
+//   margin-bottom: 1rem;
+//   border: dashed;
+//   font-size: 1.6rem;
+//   font-weight: 600;
+//   width: fit-content;
+//   margin-left: auto;
+//   margin-right: auto;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
 
-  & > svg {
-    margin-right: 1rem;
-  }
+//   & > svg {
+//     margin-right: 1rem;
+//   }
 
-  &--loading {
-    color: $color-fluorescent-green;
-    & > svg {
-      fill: $color-fluorescent-green;
-      animation: 1s linear infinite svg-animation;
-    }
-  }
+//   &--loading {
+//     color: $color-fluorescent-green;
+//     & > svg {
+//       fill: $color-fluorescent-green;
+//       animation: 1s linear infinite svg-animation;
+//     }
+//   }
 
-  &--error {
-    color: $color-error;
-    & > svg {
-      fill: $color-error;
-    }
-  }
-}
+//   &--error {
+//     color: $color-error;
+//     & > svg {
+//       fill: $color-error;
+//     }
+//   }
+// }

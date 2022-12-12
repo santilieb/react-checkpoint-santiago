@@ -8,13 +8,14 @@ function Cart() {
 
   return (
     <Modal>
-      <h1>Your Shopping Cart</h1>
+      <h1 style={{ color: "blue" }}>Your Shopping Cart</h1>
       <ul>
         {cartItems.map((item: ICartItem) => (
           <CartItem
             key={item.id}
             id={item.id}
             title={item.title}
+            image={item.image}
             price={item.price}
             quantity={item.quantity}
             totalPrice={item.totalPrice}
