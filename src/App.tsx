@@ -7,6 +7,7 @@ import "./sass/main.scss";
 import { useEffect } from "react";
 import { useAppDispatch } from "./store/hooks";
 import { cartActions } from "./store/cart-slice";
+import { wishlistActions } from "./store/wishlist-slice";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -15,11 +16,12 @@ function App() {
     (state: any) => state.ui.wishlistIsVisible
   );
   useEffect(() => {
-    //load the cart from the local storage
-    const getLocalCartData = () => {
+    //load the cart and wishlist from the local storage
+    const getLocalStorageData = () => {
       dispatch(cartActions.replaceCart());
+      dispatch(wishlistActions.replaceWishlist());
     };
-    getLocalCartData();
+    getLocalStorageData();
     // eslint-disable-next-line
   }, []);
 

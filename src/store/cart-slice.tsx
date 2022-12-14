@@ -16,7 +16,7 @@ const cartSlice = createSlice({
     // Check if cart exists in local storage
     // If it does, set the state to the cart in local storage
     // If it doesn't, set the state to the initial state
-    // This is called when the app loads
+    // This is called when the App loads
     replaceCart(state) {
       const cart = localStorage.getItem("cart");
       if (cart) {
@@ -33,7 +33,6 @@ const cartSlice = createSlice({
     addItemToCart(state, action: PayloadAction<ICartItem>) {
       if (typeof window !== "undefined") {
         const previousCart = localStorage.getItem("cart");
-        console.log("previousCart", previousCart);
         let prevCartData: ICartState;
         if (previousCart) {
           prevCartData = JSON.parse(previousCart);
