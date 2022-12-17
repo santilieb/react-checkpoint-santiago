@@ -2,9 +2,16 @@ import WishlistItem from "./WishlistItem";
 import { IItem } from "../../templates/interfaces";
 import { useAppSelector } from "../../store/hooks";
 import Modal from "../UI/Modal";
+import { uiActions } from "../../store/ui-slice";
+import { useAppDispatch } from "../../store/hooks";
 
 function Wishlist() {
+  const dispatch = useAppDispatch();
   const wishlistItems = useAppSelector((state) => state.wishlist.items);
+
+  const toggleWishlistHandler = () => {
+    dispatch(uiActions.toggleWishlist());
+  };
 
   return (
     <Modal>
@@ -20,6 +27,9 @@ function Wishlist() {
           />
         ))}
       </ul>
+
+      {/* close button */}
+      <button onClick={toggleWishlistHandler}>Close Wishlist</button>
     </Modal>
   );
 }

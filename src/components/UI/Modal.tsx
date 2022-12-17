@@ -1,7 +1,25 @@
 import ReactDOM from "react-dom";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { uiActions } from "../../store/ui-slice";
 
 function Backdrop(props: any) {
-  return <div className="backdrop"></div>;
+  const dispatch = useAppDispatch();
+  const cartIsVisible = useAppSelector((state) => state.ui.cartIsVisible);
+
+  const toggleCartHandler = () => {
+    dispatch(uiActions.toggleCart());
+  };
+
+  const toggleWishlistHandler = () => {
+    dispatch(uiActions.toggleWishlist());
+  };
+
+  return (
+    <div
+      className="backdrop"
+      onClick={cartIsVisible ? toggleCartHandler : toggleWishlistHandler}
+    ></div>
+  );
 }
 
 function ModalOverlay(props: any) {

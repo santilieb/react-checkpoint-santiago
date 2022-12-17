@@ -13,7 +13,9 @@ function HeaderCartButton() {
 
   return (
     <button
-      className="header__btn header__btn--cart"
+      className={`header__btn header__btn--cart ${
+        cartQuantity !== 0 ? "header__btn--cart-active" : ""
+      }`}
       onClick={toggleCartHandler}
     >
       <IconShoppingBag />

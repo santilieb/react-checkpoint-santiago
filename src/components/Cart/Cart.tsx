@@ -4,10 +4,15 @@ import { useAppSelector } from "../../store/hooks";
 import Modal from "../UI/Modal";
 import { cartActions } from "../../store/cart-slice";
 import { useAppDispatch } from "../../store/hooks";
+import { uiActions } from "../../store/ui-slice";
 
 function Cart() {
   const dispatch = useAppDispatch();
   const cartItems = useAppSelector((state) => state.cart.items);
+
+  const toggleCartHandler = () => {
+    dispatch(uiActions.toggleCart());
+  };
 
   const clearCartHandler = () => {
     dispatch(cartActions.clearCart());
@@ -15,7 +20,7 @@ function Cart() {
 
   return (
     <Modal>
-      <h1 style={{ color: "blue" }}>Your Shopping Cart</h1>
+      <h1>Your Bag ({cartItems.length})</h1>
       <button onClick={clearCartHandler}>Clear Cart</button>
       <ul>
         {cartItems.map((item: ICartItem) => (
@@ -30,6 +35,9 @@ function Cart() {
           />
         ))}
       </ul>
+
+      {/* close button */}
+      <button onClick={toggleCartHandler}>Close bag</button>
     </Modal>
   );
 }
