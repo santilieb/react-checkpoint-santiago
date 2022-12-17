@@ -12,7 +12,10 @@ function HeaderWishlistButton() {
   };
 
   return (
-    <button className="header__btn" onClick={toggleWishlistHandler}>
+    <button
+      className="header__btn header__btn--wishlist"
+      onClick={toggleWishlistHandler}
+    >
       <IconHeart />
       <span className="badge">
         {wishlistQuantity !== 0 ? wishlistQuantity : ""}

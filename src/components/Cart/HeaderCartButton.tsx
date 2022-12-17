@@ -12,7 +12,10 @@ function HeaderCartButton() {
   };
 
   return (
-    <button className="header__btn" onClick={toggleCartHandler}>
+    <button
+      className="header__btn header__btn--cart"
+      onClick={toggleCartHandler}
+    >
       <IconShoppingBag />
       <span className="badge">{cartQuantity !== 0 ? cartQuantity : ""}</span>
     </button>

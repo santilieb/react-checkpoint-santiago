@@ -50,8 +50,8 @@
 
   &__navigation {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    // justify-content: space-between;
+    // align-items: top;
     // width: 90px;
 
     & > ul {
@@ -64,8 +64,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 1rem;
     @include respond(laptop) {
+      margin-right: 2rem;
+    }
+    &--wishlist {
       margin-right: 2rem;
     }
     & > svg {
@@ -76,10 +78,11 @@
       z-index: 0;
     }
     & > span {
-      color: $color-error;
+      color: $color-black;
       position: absolute;
       z-index: 1000;
       font-weight: 700;
+      margin-top: 3px;
     }
   }
   &__icon {

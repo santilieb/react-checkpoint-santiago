@@ -5,29 +5,45 @@
   grid-template-rows: masonry;
   grid-column-gap: 0.5rem;
   grid-row-gap: 2rem;
+
+  @include respond(tab-port) {
+    padding: 0 2rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include respond(tab-land) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @include respond(laptop) {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }
 
 .card {
   background-color: white;
   width: 100%;
-  // max-width: 20rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   &__details {
     height: max-content;
-    // margin: 0 1.25rem 0.9375rem;
-    // order: 2;
-    // overflow: hidden;
-    // padding: 0.5rem 0 0;
-    // position: relative;
-    // width: auto;
-    // z-index: 2;
     text-align: center;
+
+    //! Ellipsis does not work, and I don't know why
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+    // white-space: nowrap;
   }
 
   &__image-container {
     height: 15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__price {
+    margin: 0.5rem 0;
   }
 
   &__image {
@@ -37,19 +53,45 @@
   }
 
   &__title {
-    color: #6d6d6d;
+    color: $color-grey;
     display: block;
-    // // font-size: 0.8125rem;
     letter-spacing: normal;
     line-height: 1.2rem;
-    // // overflow: hidden;
-    // // text-decoration: none;
-
-    // // white-space: nowrap;
-    // // text-overflow: ellipsis;
-    // white-space: nowrap;
-    // overflow: hidden;
-    // text-overflow: ellipsis;
     text-align: center;
+    margin-top: 1rem;
+  }
+
+  &__buttons {
+    grid-gap: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 3.25rem;
+    margin-bottom: 1rem;
+  }
+
+  &__btn {
+    background-color: inherit;
+    border: 0.15rem solid $color-grey;
+
+    &-bag {
+      background: $color-black;
+      border: 1px solid $color-black;
+      color: $color-white;
+      text-decoration: none;
+    }
+    &-wishlist {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &--active > svg {
+        fill: $color-black;
+        max-width: 50%;
+      }
+
+      &--inactive > svg {
+        fill: $color-light-grey;
+        max-width: 50%;
+      }
+    }
   }
 }

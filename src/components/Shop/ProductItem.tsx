@@ -3,6 +3,7 @@ import { cartActions } from "../../store/cart-slice";
 import { wishlistActions } from "../../store/wishlist-slice";
 import { useAppDispatch } from "../../store/hooks";
 import { IItem } from "../../templates/interfaces";
+import { IconHeart } from "../../img/sprite";
 
 const ProductItem = (props: IItem) => {
   const dispatch = useAppDispatch();
@@ -47,23 +48,29 @@ const ProductItem = (props: IItem) => {
       </div>
       <div className="card__buttons">
         <button
+          className="card__btn card__btn-bag"
           onClick={
             addToCartHandler.bind(null, 1)
             // we pass null as the first argument to the bind method (this keyword), and then pass the second argument
             // which is the amount of items to add to the cart (in this case, 1)
           }
         >
-          Add to Cart
+          ADD TO BAG
         </button>
-        {/* //!Delete this span */}
-        <span> </span>
-        {/* //!Delete this span */}
         {isInWishlist ? (
-          <button onClick={removeFromWishlistHandler}>
-            Remove from Wishlist
+          <button
+            className="card__btn card__btn-wishlist card__btn-wishlist--active"
+            onClick={removeFromWishlistHandler}
+          >
+            <IconHeart />
           </button>
         ) : (
-          <button onClick={addToWishlistHandler}>Add to Wishlist</button>
+          <button
+            className="card__btn card__btn-wishlist card__btn-wishlist--inactive"
+            onClick={addToWishlistHandler}
+          >
+            <IconHeart />
+          </button>
         )}
       </div>
     </Card>

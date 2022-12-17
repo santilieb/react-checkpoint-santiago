@@ -3,6 +3,7 @@ import { IItem } from "../../templates/interfaces";
 // import { useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import { useAppSelector } from "../../store/hooks";
+import { storeItems } from "../../store/store";
 
 const Products = () => {
   const wishlistItems = useAppSelector((state) => state.wishlist.items);
@@ -15,11 +16,12 @@ const Products = () => {
     <section className="products">
       <div className="products__heading">
         <h2 className="heading-secondary">New Arrivals</h2>
+        <span>{storeItems.length} items</span>
       </div>
       <ul className="card-container">
         {isLoading && <p>Loading...</p>}
         {!isLoading && error && <p>{error}</p>}
-        {response.map((product: IItem) => {
+        {storeItems.map((product: IItem) => {
           const isInWishlist = wishlistItems.some((item) => {
             if (item.id === product.id) {
               return true;
