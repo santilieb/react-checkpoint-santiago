@@ -31,3 +31,63 @@
 //     }
 //   }
 // }
+
+.header {
+  width: 100%;
+  position: fixed;
+  background: $color-dark-grey;
+  padding: 10px 0;
+  color: $color-white;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+
+  &__text-box {
+    text-transform: uppercase;
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // width: 90px;
+
+    & > ul {
+      list-style: none;
+    }
+  }
+
+  &__btn {
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    @include respond(laptop) {
+      margin-right: 2rem;
+    }
+    & > svg {
+      position: relative;
+      width: 4rem;
+      height: 4rem;
+      fill: $color-white;
+      z-index: 0;
+    }
+    & > span {
+      color: $color-error;
+      position: absolute;
+      z-index: 1000;
+      font-weight: 700;
+    }
+  }
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    // margin-right: 0.5rem;
+    &--heart {
+      // margin-right: 0.8rem;
+    }
+  }
+}

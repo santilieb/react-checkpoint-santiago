@@ -1,18 +1,20 @@
 import { uiActions } from "../../store/ui-slice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { IconShoppingBag } from "../../img/sprite";
 
 function HeaderCartButton() {
   const dispatch = useAppDispatch();
-  const cartQuantity = useAppSelector((state: any) => state.cart.totalQuantity);
+  const cartQuantity: number = useAppSelector(
+    (state) => state.cart.totalCartQuantity
+  );
   const toggleCartHandler = () => {
     dispatch(uiActions.toggleCart());
   };
 
   return (
-    <button className="button" onClick={toggleCartHandler}>
-      <span>My Cart</span>
-      <br />
-      <span className="badge">{cartQuantity}</span>
+    <button className="header__btn" onClick={toggleCartHandler}>
+      <IconShoppingBag />
+      <span className="badge">{cartQuantity !== 0 ? cartQuantity : ""}</span>
     </button>
   );
 }

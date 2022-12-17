@@ -26,7 +26,7 @@ function Cart() {
             image={item.image}
             price={item.price}
             quantity={item.quantity}
-            totalPrice={item.totalPrice}
+            totalItemPrice={item.totalItemPrice}
           />
         ))}
       </ul>

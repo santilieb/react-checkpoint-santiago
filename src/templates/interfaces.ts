@@ -10,13 +10,13 @@ export interface IItem {
 //interface for the Cart items that extends IItem to add quantity and totalPrice
 export interface ICartItem extends IItem {
   quantity: number;
-  totalPrice: number;
+  totalItemPrice: number;
 }
 
 export interface ICartState {
   items: ICartItem[];
-  totalPrice: number;
-  totalQuantity: number;
+  totalCartPrice: number;
+  totalCartQuantity: number;
 }
 
 export interface IWishlistState {

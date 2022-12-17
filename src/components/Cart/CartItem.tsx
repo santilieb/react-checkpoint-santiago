@@ -4,7 +4,7 @@ import { cartActions } from "../../store/cart-slice";
 
 function CartItem(props: ICartItem) {
   const dispatch = useAppDispatch();
-  const { id, title, price, quantity, image, totalPrice } = props;
+  const { id, title, price, quantity, image, totalItemPrice } = props;
 
   const removeItemFromCartHandler = () => {
     dispatch(cartActions.removeItemFromCart(id));
@@ -18,7 +18,7 @@ function CartItem(props: ICartItem) {
         price,
         image,
         quantity: 1,
-        totalPrice: price,
+        totalItemPrice: price,
       })
     );
   };
@@ -32,7 +32,7 @@ function CartItem(props: ICartItem) {
       <header>
         <h3>{title}</h3>
         <div className="">
-          ${totalPrice.toFixed(2)}{" "}
+          ${totalItemPrice.toFixed(2)}{" "}
           <span className="">(${price.toFixed(2)}/item)</span>
         </div>
       </header>

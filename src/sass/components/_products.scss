@@ -2,14 +2,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
 
-// container for all product cards
-.card-container {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
+  &__heading {
+    width: 100%;
+    text-align: left;
+    padding: 0 2rem;
+  }
 }

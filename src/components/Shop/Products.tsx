@@ -13,7 +13,9 @@ const Products = () => {
 
   return (
     <section className="products">
-      <h2 className="heading-secondary">Buy your favorite products</h2>
+      <div className="products__heading">
+        <h2 className="heading-secondary">New Arrivals</h2>
+      </div>
       <ul className="card-container">
         {isLoading && <p>Loading...</p>}
         {!isLoading && error && <p>{error}</p>}

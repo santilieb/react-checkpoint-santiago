@@ -4,16 +4,12 @@ import HeaderWishlistButton from "../Wishlist/HeaderWishlistButton";
 function Header() {
   return (
     <header className="header">
-      <h1>React Shop</h1>
-      <nav>
-        <ul>
-          <li>
-            <HeaderCartButton />
-            <br />
-            <br />
-            <HeaderWishlistButton />
-          </li>
-        </ul>
+      <div className="header__text-box">
+        <h1 className="heading-primary">React Shop</h1>
+      </div>
+      <nav className="header__navigation">
+        <HeaderWishlistButton />
+        <HeaderCartButton />
       </nav>
     </header>
   );

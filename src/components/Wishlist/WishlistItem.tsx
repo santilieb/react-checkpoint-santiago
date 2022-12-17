@@ -19,7 +19,7 @@ function CartItem(props: IItem) {
         price,
         image,
         quantity: 1,
-        totalPrice: price,
+        totalItemPrice: price,
       })
     );
   };

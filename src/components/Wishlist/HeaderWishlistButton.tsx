@@ -1,20 +1,22 @@
 import { uiActions } from "../../store/ui-slice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { IconHeart } from "../../img/sprite";
 
 function HeaderWishlistButton() {
   const dispatch = useAppDispatch();
-  const wishlistQuantity = useAppSelector(
-    (state: any) => state.wishlist.totalQuantity
+  const wishlistQuantity: number = useAppSelector(
+    (state) => state.wishlist.totalQuantity
   );
   const toggleWishlistHandler = () => {
     dispatch(uiActions.toggleWishlist());
   };
 
   return (
-    <button className="button" onClick={toggleWishlistHandler}>
-      <span>My Wishlist</span>
-      <br />
-      <span className="badge">{wishlistQuantity}</span>
+    <button className="header__btn" onClick={toggleWishlistHandler}>
+      <IconHeart />
+      <span className="badge">
+        {wishlistQuantity !== 0 ? wishlistQuantity : ""}
+      </span>
     </button>
   );
 }
