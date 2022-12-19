@@ -1,0 +1,54 @@
+.filter__form {
+  bottom: 0;
+  height: 2rem;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 11.25rem;
+  width: 100%;
+
+  @include respond(tab-land) {
+    display: none;
+  }
+}
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__button {
+    height: 2rem;
+    padding: 0.4rem 0.625rem 0.4625rem;
+    width: 30%;
+    border-radius: 0.5rem;
+    background: #fff;
+    border: 1px solid #000;
+    color: #000;
+    margin: 1rem 0;
+
+    & > svg {
+      height: 1rem;
+      margin-right: 2rem;
+    }
+  }
+  @include respond(tab-land) {
+    display: none;
+  }
+}
+
+// .filter-btn {
+//   height: auto;
+//   width: 100%;
+// }
+// .filter {
+//   background: #fff;
+//   border: 1px solid #000;
+//   color: #000;
+//   &__button {
+//     height: 2.1875rem;
+//     padding: 0.4rem 0.625rem 0.4625rem;
+//     width: 47%;
+//   }
+// }
+// }

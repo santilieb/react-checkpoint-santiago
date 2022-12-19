@@ -28,12 +28,11 @@ const Products = () => {
 
   return (
     <section className="products">
-      <Filter />
-
       <header className="products__heading">
         <h2 className="heading-secondary">New Arrivals</h2>
         <span>{filteredItems.length} items</span>
       </header>
+      <Filter />
       <ul className="card-container">
         {isLoading && <p>Loading...</p>}
         {!isLoading && error && <p>{error}</p>}
