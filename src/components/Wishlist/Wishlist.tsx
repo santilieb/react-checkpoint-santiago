@@ -4,10 +4,14 @@ import { useAppSelector } from "../../store/hooks";
 import Modal from "../UI/Modal";
 import { uiActions } from "../../store/ui-slice";
 import { useAppDispatch } from "../../store/hooks";
+import { IconCross } from "../../img/sprite";
 
 function Wishlist() {
   const dispatch = useAppDispatch();
   const wishlistItems = useAppSelector((state) => state.wishlist.items);
+  const wishlistQuantity = useAppSelector(
+    (state) => state.wishlist.totalQuantity
+  );
 
   const toggleWishlistHandler = () => {
     dispatch(uiActions.toggleWishlist());
@@ -15,8 +19,18 @@ function Wishlist() {
 
   return (
     <Modal>
-      <h1>Your Wishlist ({wishlistItems.length})</h1>
-      <ul>
+      <header className="cart-header">
+        <h1>Your Wishlist ({wishlistQuantity})</h1>
+        {/* close button */}
+        <button
+          className="cart-header__close-button"
+          onClick={toggleWishlistHandler}
+        >
+          <IconCross />
+        </button>
+      </header>
+
+      <ul className="cart-items">
         {wishlistItems.map((item: IItem) => (
           <WishlistItem
             key={item.id}
@@ -27,9 +41,6 @@ function Wishlist() {
           />
         ))}
       </ul>
-
-      {/* close button */}
-      <button onClick={toggleWishlistHandler}>Close Wishlist</button>
     </Modal>
   );
 }

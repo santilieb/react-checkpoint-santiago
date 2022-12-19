@@ -25,16 +25,22 @@ function CartItem(props: IItem) {
   };
 
   return (
-    <li className="">
-      <header>
-        <h3>{title}</h3>
-      </header>
-      <div className="">
-        <div className="">
-          <button onClick={removeItemFromWishlistHandler}>
-            Remove from wishlist
-          </button>
-          <button onClick={addItemToCartHandler}>Add to cart</button>
+    <li className="cart-item">
+      <div className="cart-item__main-content">
+        <div className="cart-item__image-container">
+          <img src={image} className="image-container__image" alt={title} />
+        </div>
+        <div className="cart-item__right-side-container">
+          <header className="cart-item-header">
+            <h3>{title}</h3>
+            <div className="cart-item-header__price">${price.toFixed(2)}</div>
+          </header>
+          <div className="cart-item__buttons-container">
+            <button onClick={removeItemFromWishlistHandler}>
+              Remove from wishlist
+            </button>
+            <button onClick={addItemToCartHandler}>Add to cart</button>
+          </div>
         </div>
       </div>
     </li>

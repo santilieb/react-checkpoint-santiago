@@ -1,19 +1,21 @@
 import Layout from "./components/Layout/Layout";
 import Cart from "./components/Cart/Cart";
 import Wishlist from "./components/Wishlist/Wishlist";
-import { useSelector } from "react-redux";
 import Products from "./components/Shop/Products";
 import "./sass/main.scss";
 import { useEffect } from "react";
 import { useAppDispatch } from "./store/hooks";
 import { cartActions } from "./store/cart-slice";
 import { wishlistActions } from "./store/wishlist-slice";
+import { useAppSelector } from "./store/hooks";
 
 function App() {
   const dispatch = useAppDispatch();
-  const cartIsVisible = useSelector((state: any) => state.ui.cartIsVisible);
-  const wishlistIsVisible = useSelector(
-    (state: any) => state.ui.wishlistIsVisible
+  const cartIsVisible: boolean = useAppSelector(
+    (state) => state.ui.cartIsVisible
+  );
+  const wishlistIsVisible: boolean = useAppSelector(
+    (state) => state.ui.wishlistIsVisible
   );
   useEffect(() => {
     //load the cart and wishlist from the local storage

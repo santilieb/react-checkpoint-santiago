@@ -55,13 +55,14 @@ function Cart() {
           />
         ))}
       </ul>
-      <div className="order-summary">
-        <h2>Order Summary</h2>
-        <div className="order-summary__total">
+      <div className="cart-order-summary">
+        <h2 className="cart-order-summary__title">Order Summary</h2>
+        <div className="cart-order-summary__total">
           <span>Total: </span>
-          <span>${cartPrice.toFixed(2)}</span>
+          <span className="cart-order-summary__total-price">
+            ${cartPrice.toFixed(2)}
+          </span>
         </div>
-        <button>Checkout</button>
       </div>
     </Modal>
   );

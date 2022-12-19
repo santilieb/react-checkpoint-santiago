@@ -57,7 +57,9 @@ function CartItem(props: ICartItem) {
               <span className="">(${price.toFixed(2)}/item)</span>
             </div>
           </header>
-          <button onClick={removeArticleCartHandler}>Remove</button>
+          <div className="cart-item__buttons-container">
+            <button onClick={removeArticleCartHandler}>Remove</button>
+          </div>
         </div>
       </div>
     </li>
