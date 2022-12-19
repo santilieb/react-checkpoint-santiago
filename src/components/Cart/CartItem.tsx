@@ -1,6 +1,7 @@
 import { ICartItem } from "../../templates/interfaces";
 import { useAppDispatch } from "../../store/hooks";
 import { cartActions } from "../../store/cart-slice";
+import { wishlistActions } from "../../store/wishlist-slice";
 
 function CartItem(props: ICartItem) {
   const dispatch = useAppDispatch();
@@ -8,6 +9,17 @@ function CartItem(props: ICartItem) {
 
   const removeItemFromCartHandler = () => {
     dispatch(cartActions.removeItemFromCart(id));
+  };
+
+  const addItemToWishlistHandler = () => {
+    dispatch(
+      wishlistActions.addItemToWishlist({
+        id,
+        title,
+        price,
+        image,
+      })
+    );
   };
 
   const addItemToCartHandler = () => {
@@ -28,23 +40,23 @@ function CartItem(props: ICartItem) {
   };
 
   return (
-    <li className="">
-      <header>
-        <h3>{title}</h3>
-        <div className="">
-          ${totalItemPrice.toFixed(2)}{" "}
-          <span className="">(${price.toFixed(2)}/item)</span>
+    <li className="cart-item">
+      <h3 className="cart-item-header--small-screen">{title}</h3>
+      <div className="cart-item__main-content">
+        <div className="cart-item__image-container">
+          <img src={image} className="image-container__image" alt={title} />
         </div>
-      </header>
-      <div className="">
-        <div className="">
-          x <span>{quantity}</span>
-        </div>
-        <div className="">
-          <button onClick={removeItemFromCartHandler}>- remove 1 </button>
-          <br />
-          <button onClick={addItemToCartHandler}>+ add 1</button>
-          <br />
+        <div className="cart-item__right-side-container">
+          <header className="cart-item-header">
+            <h3 className="cart-item-header__title">{title}</h3>
+            <div className="cart-item-header__quantity">
+              Qty: <span>{quantity}</span>
+            </div>
+            <div className="cart-item-header__price">
+              ${totalItemPrice.toFixed(2)}{" "}
+              <span className="">(${price.toFixed(2)}/item)</span>
+            </div>
+          </header>
           <button onClick={removeArticleCartHandler}>Remove</button>
         </div>
       </div>

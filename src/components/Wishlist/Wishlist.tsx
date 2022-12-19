@@ -15,7 +15,7 @@ function Wishlist() {
 
   return (
     <Modal>
-      <h1 style={{ color: "red" }}>Your Wishlist</h1>
+      <h1>Your Wishlist ({wishlistItems.length})</h1>
       <ul>
         {wishlistItems.map((item: IItem) => (
           <WishlistItem

@@ -1,0 +1,108 @@
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__right-side {
+    display: flex;
+    align-items: center;
+  }
+  &__clear-button {
+    background: #000;
+    border: 1px solid #000;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 0.5rem;
+    height: 2.5rem;
+    padding: 0 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  &__close-button {
+    align-items: baseline;
+    cursor: pointer;
+    & > svg {
+      height: 2rem;
+    }
+  }
+}
+
+.cart-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 60vh;
+  overflow: scroll;
+
+  // in order to hide the scrollbar
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+  }
+}
+.cart-item {
+  margin-bottom: 2rem;
+
+  &__main-content {
+    display: flex;
+  }
+  &__image-container {
+    background-color: $color-white;
+    margin-right: 1rem;
+  }
+  &__right-side-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & > button {
+      text-transform: uppercase;
+      //button size the same as the text
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.5rem;
+      letter-spacing: 0.05rem;
+      text-align: left;
+      cursor: pointer;
+      max-width: fit-content;
+    }
+  }
+}
+.cart-item-header {
+  &__title {
+    display: none;
+    @include respond(tab-port) {
+      display: block;
+    }
+  }
+  &__quantity {
+    text-decoration: underline;
+  }
+  &__price {
+    font-weight: 700;
+    & > span {
+      font-weight: 400;
+    }
+  }
+  &--small-screen {
+    // font-size: 0.8125rem;
+    letter-spacing: normal;
+    line-height: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  @include respond(tab-port) {
+    &--small-screen {
+      display: none;
+    }
+  }
+}
+.image-container {
+  &__image {
+    max-width: 10rem;
+    // max-height: 10rem;
+    margin: 1rem;
+    background-color: $color-white;
+    object-fit: cover;
+  }
+}

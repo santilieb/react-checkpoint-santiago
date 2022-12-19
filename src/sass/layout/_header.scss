@@ -30,9 +30,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    @include respond(laptop) {
-      margin-right: 2rem;
-    }
+
     & > svg {
       position: relative;
       width: 4rem;
