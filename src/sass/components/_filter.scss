@@ -36,19 +36,35 @@
     display: none;
   }
 }
+.filter__buttons {
+  display: none;
+}
+@include respond(tab-land) {
+  .filter__buttons {
+    width: 100%;
+    display: flex;
 
-// .filter-btn {
-//   height: auto;
-//   width: 100%;
-// }
-// .filter {
-//   background: #fff;
-//   border: 1px solid #000;
-//   color: #000;
-//   &__button {
-//     height: 2.1875rem;
-//     padding: 0.4rem 0.625rem 0.4625rem;
-//     width: 47%;
-//   }
-// }
-// }
+    margin: 0 2rem;
+
+    justify-content: space-around;
+    align-items: center;
+  }
+  .filter-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    height: 2rem;
+    width: 100%;
+    background: inherit;
+    border: 0.25rem solid #000;
+    color: #000;
+    margin: 1rem 0;
+    cursor: pointer;
+  }
+
+  .filter-btn--active {
+    background: #000;
+    color: #fff;
+  }
+}

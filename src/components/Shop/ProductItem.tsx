@@ -59,21 +59,16 @@ const ProductItem = (props: IItem) => {
         >
           ADD TO BAG
         </button>
-        {isInWishlist ? (
-          <button
-            className="card__btn card__btn-wishlist card__btn-wishlist--active"
-            onClick={removeFromWishlistHandler}
-          >
-            <IconHeart />
-          </button>
-        ) : (
-          <button
-            className="card__btn card__btn-wishlist card__btn-wishlist--inactive"
-            onClick={addToWishlistHandler}
-          >
-            <IconHeart />
-          </button>
-        )}
+        <button
+          className={`card__btn card__btn-wishlist card__btn-wishlist--${
+            isInWishlist ? "active" : "inactive"
+          }`}
+          onClick={
+            isInWishlist ? removeFromWishlistHandler : addToWishlistHandler
+          }
+        >
+          <IconHeart />
+        </button>
       </div>
     </Card>
   );

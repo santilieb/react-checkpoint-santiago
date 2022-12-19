@@ -1,35 +1,45 @@
-// .message {
-//   padding: 1rem;
-//   margin-top: 5rem;
-//   border-radius: 0.5rem;
-//   text-align: center;
-//   margin-bottom: 1rem;
-//   border: dashed;
-//   font-size: 1.6rem;
-//   font-weight: 600;
-//   width: fit-content;
-//   margin-left: auto;
-//   margin-right: auto;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
+.message {
+  //   padding: 1rem;
+  //   margin-top: 5rem;
+  //   border-radius: 0.5rem;
+  //   text-align: center;
+  //   margin-bottom: 1rem;
+  //   border: dashed;
+  //   font-size: 1.6rem;
+  //   font-weight: 600;
+  //   width: fit-content;
+  //   margin-left: auto;
+  //   margin-right: auto;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //center the message in the middle of the screen
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
 
-//   & > svg {
-//     margin-right: 1rem;
-//   }
+  & > p {
+    font-size: 1.2rem;
+  }
 
-//   &--loading {
-//     color: $color-fluorescent-green;
-//     & > svg {
-//       fill: $color-fluorescent-green;
-//       animation: 1s linear infinite svg-animation;
-//     }
-//   }
+  & > svg {
+    margin-right: 1rem;
+  }
 
-//   &--error {
-//     color: $color-error;
-//     & > svg {
-//       fill: $color-error;
-//     }
-//   }
-// }
+  &--loading {
+    & > svg {
+      animation: 1s linear infinite svg-animation;
+    }
+  }
+
+  &--error {
+    color: $color-red;
+    //text to uppercase
+    text-transform: uppercase;
+    & > svg {
+      fill: $color-red;
+    }
+  }
+}
