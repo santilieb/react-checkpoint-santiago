@@ -28,11 +28,6 @@
   &__details {
     height: max-content;
     text-align: center;
-
-    //! Ellipsis does not work, and I don't know why
-    // overflow: hidden;
-    // text-overflow: ellipsis;
-    // white-space: nowrap;
   }
 
   &__image-container {
@@ -66,8 +61,13 @@
     display: grid;
     grid-template-columns: 1fr 3.25rem;
     margin-bottom: 1rem;
+    & > button {
+      cursor: pointer;
+      &:hover:first-child {
+        border: solid 0.15rem $color-white;
+      }
+    }
   }
-
   &__btn {
     background-color: inherit;
     border: 0.15rem solid $color-grey;

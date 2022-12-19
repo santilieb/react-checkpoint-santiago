@@ -40,7 +40,9 @@ const ProductItem = (props: IItem) => {
   return (
     <Card>
       <div className="card__image-container">
-        <img className="card__image" src={image} alt={title} />
+        <figure className="card__image-wrapper">
+          <img className="card__image" src={image} alt={title} />
+        </figure>
       </div>
       <div className="card__details">
         <h3 className="card__title">{title}</h3>

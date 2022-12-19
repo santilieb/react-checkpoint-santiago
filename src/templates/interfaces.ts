@@ -5,6 +5,7 @@ export interface IItem {
   title: string;
   price: number;
   isInWishlist?: boolean;
+  category?: string;
 }
 
 //interface for the Cart items that extends IItem to add quantity and totalPrice

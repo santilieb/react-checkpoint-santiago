@@ -97,6 +97,18 @@
     line-height: 1.25rem;
     margin: 0.5rem 0;
   }
+  & > button {
+    cursor: pointer;
+    margin-right: 1rem;
+
+    & > svg {
+      max-width: 1rem;
+      max-height: 1rem;
+    }
+  }
+  & > button:hover {
+    text-decoration: underline;
+  }
   @include respond(tab-port) {
     &--small-screen {
       display: none;

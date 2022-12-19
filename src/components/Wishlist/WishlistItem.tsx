@@ -26,10 +26,10 @@ function CartItem(props: IItem) {
 
   return (
     <li className="cart-item">
-      <div className="cart-item__main-content">
-        <div className="cart-item__image-container">
+      <article className="cart-item__main-content">
+        <figure className="cart-item__image-container">
           <img src={image} className="image-container__image" alt={title} />
-        </div>
+        </figure>
         <div className="cart-item__right-side-container">
           <header className="cart-item-header">
             <h3>{title}</h3>
@@ -42,7 +42,7 @@ function CartItem(props: IItem) {
             <button onClick={addItemToCartHandler}>Add to cart</button>
           </div>
         </div>
-      </div>
+      </article>
     </li>
   );
 }

@@ -60,7 +60,7 @@ function Cart() {
         <div className="cart-order-summary__total">
           <span>Total: </span>
           <span className="cart-order-summary__total-price">
-            ${cartPrice.toFixed(2)}
+            ${cartPrice < 0 ? "0.00" : cartPrice.toFixed(2)}
           </span>
         </div>
       </div>
