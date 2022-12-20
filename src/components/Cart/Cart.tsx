@@ -25,7 +25,6 @@ function Cart() {
     <Modal>
       <header className="cart-header">
         <h1>Your Bag ({cartQuantity})</h1>
-        {/* close button */}
         <div className="cart-header__right-side">
           <button
             className="cart-header__clear-button"
@@ -55,7 +54,7 @@ function Cart() {
           />
         ))}
       </ul>
-      <div className="cart-order-summary">
+      <div aria-label="cart summary" className="cart-order-summary">
         <h2 className="cart-order-summary__title">Order Summary</h2>
         <div className="cart-order-summary__total">
           <span>Total: </span>

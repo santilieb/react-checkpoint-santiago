@@ -1,19 +1,4 @@
 .message {
-  //   padding: 1rem;
-  //   margin-top: 5rem;
-  //   border-radius: 0.5rem;
-  //   text-align: center;
-  //   margin-bottom: 1rem;
-  //   border: dashed;
-  //   font-size: 1.6rem;
-  //   font-weight: 600;
-  //   width: fit-content;
-  //   margin-left: auto;
-  //   margin-right: auto;
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  //center the message in the middle of the screen
   position: absolute;
   top: 50%;
   left: 50%;
@@ -36,7 +21,6 @@
 
   &--error {
     color: $color-red;
-    //text to uppercase
     text-transform: uppercase;
     & > svg {
       fill: $color-red;

@@ -9,9 +9,9 @@
     align-items: center;
   }
   &__clear-button {
-    background: #000;
-    border: 0.1rem solid #000;
-    color: #fff;
+    background: $color-black;
+    border: 0.1rem solid $color-black;
+    color: $color-white;
     text-decoration: none;
     margin-right: 0.5rem;
     height: 2.5rem;

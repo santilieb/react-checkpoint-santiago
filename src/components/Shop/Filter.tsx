@@ -8,6 +8,7 @@ const Filter = () => {
   const category = useAppSelector((state) => state.filter.category);
   return (
     <>
+      {/* single dropdown filter that will appear in smaller screens */}
       <button
         aria-label="filter-products"
         className="filter filter__button"
@@ -31,7 +32,7 @@ const Filter = () => {
         </form>
       </button>
       <div className="filter__buttons">
-        {/* five buttons, each with a different value for setCategory */}
+        {/* Five buttons that will appear only in bigger screens */}
         <button
           className={`filter-btn ${
             category === "" ? "filter-btn--active" : ""

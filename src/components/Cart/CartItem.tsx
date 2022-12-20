@@ -52,7 +52,10 @@ function CartItem(props: ICartItem) {
               <span className="">(${price.toFixed(2)}/item)</span>
             </div>
           </header>
-          <div className="cart-item__buttons-container">
+          <div
+            aria-label="remove article from cart"
+            className="cart-item__buttons-container"
+          >
             <button onClick={removeArticleCartHandler}>Remove</button>
           </div>
         </div>

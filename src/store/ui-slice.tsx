@@ -8,7 +8,7 @@ const uiSlice = createSlice({
   reducers: {
     toggleCart(state) {
       state.cartIsVisible = !state.cartIsVisible;
-      // Disables Background Scrolling whilst cart modal is open
+      // Disables Background Scrolling whilst the cart modal is open
       if (
         typeof window != "undefined" &&
         window.document &&
@@ -21,7 +21,7 @@ const uiSlice = createSlice({
     },
     toggleWishlist(state) {
       state.wishlistIsVisible = !state.wishlistIsVisible;
-      // Disables Background Scrolling whilst wishlist the modal is open
+      // Disables Background Scrolling whilst the wishlist modal is open
       if (
         typeof window != "undefined" &&
         window.document &&

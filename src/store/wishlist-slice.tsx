@@ -26,7 +26,6 @@ const wishlistSlice = createSlice({
     addItemToWishlist(state, action: PayloadAction<IItem>) {
       if (typeof window !== "undefined") {
         const previousWishlist = localStorage.getItem("wishlist");
-        console.log("previousWishlist", previousWishlist);
         let prevWishlistData: IWishlistState;
         if (previousWishlist) {
           prevWishlistData = JSON.parse(previousWishlist);

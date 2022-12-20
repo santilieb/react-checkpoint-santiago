@@ -21,7 +21,6 @@ function Wishlist() {
     <Modal>
       <header className="cart-header">
         <h1>Your Wishlist ({wishlistQuantity})</h1>
-        {/* close button */}
         <button
           className="cart-header__close-button"
           onClick={toggleWishlistHandler}

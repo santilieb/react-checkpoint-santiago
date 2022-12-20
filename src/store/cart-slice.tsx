@@ -14,7 +14,7 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     // Check if cart exists in local storage
-    // If it does, set the state to the cart in local storage
+    // If it does, set the state to the cart inside local storage
     // If it doesn't, set the state to the initial state
     // This is called when the App loads
     replaceCart(state) {

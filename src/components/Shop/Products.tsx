@@ -40,6 +40,8 @@ const Products = () => {
           !error &&
           filteredItems.map((product: IItem) => {
             const isInWishlist = wishlistItems.some((item) => {
+              // check if the product is in the wishlist
+              // if it is, the heart icon will be filled
               if (item.id === product.id) {
                 return true;
               }

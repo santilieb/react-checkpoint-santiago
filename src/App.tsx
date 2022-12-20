@@ -28,13 +28,13 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <main className="App">
       <Layout>
         {cartIsVisible && <Cart />}
         {wishlistIsVisible && <Wishlist />}
         <Products />
       </Layout>
-    </div>
+    </main>
   );
 }
 
