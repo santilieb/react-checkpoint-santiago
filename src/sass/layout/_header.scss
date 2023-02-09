@@ -15,9 +15,6 @@
 
   &__navigation {
     display: flex;
-    // justify-content: space-between;
-    // align-items: top;
-    // width: 90px;
 
     & > ul {
       list-style: none;
@@ -79,9 +76,5 @@
   &__icon {
     width: 2.5rem;
     height: 2.5rem;
-    // margin-right: 0.5rem;
-    &--heart {
-      // margin-right: 0.8rem;
-    }
   }
 }

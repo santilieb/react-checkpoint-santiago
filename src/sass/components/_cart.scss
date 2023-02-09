@@ -92,7 +92,6 @@
     }
   }
   &--small-screen {
-    // font-size: 0.8125rem;
     letter-spacing: normal;
     line-height: 1.25rem;
     margin: 0.5rem 0;
@@ -118,7 +117,6 @@
 .image-container {
   &__image {
     max-width: 10rem;
-    // max-height: 10rem;
     margin: 1rem;
     background-color: $color-white;
     object-fit: cover;
