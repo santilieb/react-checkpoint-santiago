@@ -1,8 +1,13 @@
 import ReactDOM from "react-dom";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { uiActions } from "../../store/ui-slice";
+import { ReactNode } from "react";
 
-function Backdrop(props: any) {
+interface ModalProps {
+  children?: ReactNode;
+}
+
+function Backdrop() {
   const dispatch = useAppDispatch();
   const cartIsVisible = useAppSelector((state) => state.ui.cartIsVisible);
 
@@ -22,22 +27,22 @@ function Backdrop(props: any) {
   );
 }
 
-function ModalOverlay(props: any) {
+function ModalOverlay({ children }: ModalProps) {
   return (
     <div className="modal">
-      <div className="content">{props.children}</div>
+      <div className="content">{children}</div>
     </div>
   );
 }
 
 const portalElement = document.getElementById("overlays")!;
 
-function Modal(props: any) {
+function Modal({ children }: ModalProps) {
   return (
     <>
       {ReactDOM.createPortal(<Backdrop />, portalElement!)}
       {ReactDOM.createPortal(
-        <ModalOverlay>{props.children}</ModalOverlay>,
+        <ModalOverlay>{children}</ModalOverlay>,
         portalElement!
       )}
     </>

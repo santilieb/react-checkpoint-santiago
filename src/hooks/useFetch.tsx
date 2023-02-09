@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 
 // Custom hook that fetches data from the API using axios
 // It is set to timeout after 10 seconds if no response is received
@@ -15,8 +15,9 @@ function useFetch(url: string) {
         timeout: 10000,
       });
       setResponse(res.data); // Set the response to the data received from the API
-    } catch (error: any) {
-      setError(error.message); // Set the error to the error message received from the API
+    } catch (error) {
+      const err = error as AxiosError; // Cast the error to an AxiosError
+      setError(err?.message); // Set the error to the error message received from the API
     } finally {
       setIsLoading(false); // Set the loading state to false once the data has been fetched or an error has been received
     }
@@ -32,3 +33,8 @@ function useFetch(url: string) {
 }
 
 export default useFetch;
+
+catch (error) {
+  const err = error as AxiosError
+  console.log(err.response?.data)
+}
