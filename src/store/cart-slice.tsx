@@ -53,10 +53,10 @@ const cartSlice = createSlice({
         existingItem.totalItemPrice += newItem.totalItemPrice;
       }
       // map the totalItemPrice and quantity of each item in the cart
-      const totalPrice = state.items.map(
+      const totalPrice = state.items?.map(
         (product: ICartItem) => product.totalItemPrice
       );
-      const totalQuantity = state.items.map(
+      const totalQuantity = state.items?.map(
         (product: ICartItem) => product.quantity
       );
 

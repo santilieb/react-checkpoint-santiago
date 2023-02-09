@@ -42,7 +42,7 @@ function Cart() {
       </header>
 
       <ul className="cart-items">
-        {cartItems.map((item: ICartItem) => (
+        {cartItems?.map((item: ICartItem) => (
           <CartItem
             key={item.id}
             id={item.id}

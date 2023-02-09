@@ -30,7 +30,7 @@ function Wishlist() {
       </header>
 
       <ul className="cart-items">
-        {wishlistItems.map((item: IItem) => (
+        {wishlistItems?.map((item: IItem) => (
           <WishlistItem
             key={item.id}
             id={item.id}

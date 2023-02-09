@@ -38,7 +38,7 @@ const Products = () => {
         {!isLoading && error && <Error message={error} />}
         {!isLoading &&
           !error &&
-          filteredItems.map((product: IItem) => {
+          filteredItems?.map((product: IItem) => {
             const isInWishlist = wishlistItems.some((item) => {
               // check if the product is in the wishlist
               // if it is, the heart icon will be filled
