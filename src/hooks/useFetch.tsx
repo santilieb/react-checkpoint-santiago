@@ -33,8 +33,3 @@ function useFetch(url: string) {
 }
 
 export default useFetch;
-
-catch (error) {
-  const err = error as AxiosError
-  console.log(err.response?.data)
-}
